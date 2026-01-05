@@ -61,4 +61,4 @@ class MyQueue:
         return self.stack2[len(self.stack2)-1]
     
     def empty(self) -> bool:
-        return len(self.stack1) == 0 and len(self.stack2)==0
+        return len(self.stack1) == 0 and len(self.stack2)==0 
