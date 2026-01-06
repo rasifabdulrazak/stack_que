@@ -62,3 +62,17 @@ class MyQueue:
     
     def empty(self) -> bool:
         return len(self.stack1) == 0 and len(self.stack2)==0 
+    
+    
+def bracket_pairs(pair:str):
+    stack = []
+    inbiult = {"[":"]","{":"}","(":")"}
+    for i in pair:
+        if i in inbiult:
+            stack.append(i)
+        elif i in inbiult.values():
+            if not stack or inbiult[stack.pop()] != i:
+                return False
+    return not stack
+
+print(bracket_pairs("(([]))"))
