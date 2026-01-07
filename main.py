@@ -117,3 +117,25 @@ def remove_outermost_paranthesis(s:str):
     return ans
 
 print(remove_outermost_paranthesis("(()())(())"))
+
+def remove_outermost_without_stack(s:str):
+    ans = ""
+    level = 0
+    
+    for i in s:
+        if i == "(":
+            level += 1
+            if level > 1:
+                ans += i
+            
+        else:
+            if level > 1:
+                ans += i
+            level -= 1
+    return ans
+
+print(remove_outermost_without_stack("(()())(())"))
+            
+    
+    
+    
