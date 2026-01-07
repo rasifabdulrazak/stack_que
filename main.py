@@ -97,3 +97,23 @@ class MinStack:
     
     def getMin(self):
         return self.stack[-1][1]
+    
+
+# Remove Outermost Parentheses
+def remove_outermost_paranthesis(s:str):
+    stack = []
+    ans = ""
+    
+    for i in s:
+        if i == "(":
+            stack.append(i)
+            if len(stack) > 1:
+                ans += i
+        else:
+            if len(stack) > 1:
+                ans += i
+            stack.pop()
+            
+    return ans
+
+print(remove_outermost_paranthesis("(()())(())"))
