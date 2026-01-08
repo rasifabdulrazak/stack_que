@@ -133,7 +133,7 @@ def remove_outermost_without_stack(s:str):
                 ans += i
             level -= 1
     return ans
-
+ 
 print(remove_outermost_without_stack("(()())(())"))
             
     
