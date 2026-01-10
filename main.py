@@ -135,6 +135,27 @@ def remove_outermost_without_stack(s:str):
     return ans
   
 print(remove_outermost_without_stack("(()())(())"))
+
+
+import operator
+def reverse_polich_notation(tokens:list):
+    ops = {
+        "+":operator.add,
+        "-":operator.sub,
+        "*":operator.mul,
+        "/":lambda a,b:  int(a/b)
+    }
+    stack = []
+    for i in tokens:
+        if i in ops:
+            a = stack.pop()
+            b = stack.pop()
+            stack.append(ops.get(i)(b,a))
+        else:
+            stack.append(int(i))
+    return stack.pop()
+
+print(reverse_polich_notation(["5","3","-"]))
             
     
     
