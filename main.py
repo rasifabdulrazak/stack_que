@@ -129,7 +129,7 @@ def remove_outermost_without_stack(s:str):
                 ans += i
             
         else:
-            if level > 1:
+            if level > 1: 
                 ans += i
             level -= 1
     return ans
