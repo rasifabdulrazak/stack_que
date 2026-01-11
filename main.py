@@ -157,6 +157,33 @@ def reverse_polich_notation(tokens:list):
 
 print(reverse_polich_notation(["5","3","-"]))
             
+
+def next_greater_element1(nums1:list,nums2:list):
+    next_gt = {}
+    _len = len(nums2)
+    stack = []
     
+    stack.append(nums2[_len - 1])
+    next_gt[nums2[_len - 1]] = -1
+    
+    for i,j in enumerate(nums2[::-1][1:]):
+        while stack:
+            
+            if stack[len(stack) - 1] < j:
+                stack.pop()
+                
+            else:
+                next_gt[j] = stack[len(stack) - 1]
+                break
+                
+        if not stack:
+            next_gt[j] = -1
+            
+        stack.append(j)
+        
+    return [next_gt.get(k) for k in nums1]
+
+print(next_greater_element1([4,1,2],[1,3,4,2]))
+            
     
     
