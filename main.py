@@ -183,7 +183,7 @@ def next_greater_element1(nums1:list,nums2:list):
         
     return [next_gt.get(k) for k in nums1]
 
-print(next_greater_element1([4,1,2],[1,3,4,2]))
+print(next_greater_element1([4,1,2],[1,3,4,2])) 
             
     
     
