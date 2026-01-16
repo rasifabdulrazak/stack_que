@@ -176,7 +176,7 @@ def next_greater_element1(nums1:list,nums2:list):
                 next_gt[j] = stack[len(stack) - 1]
                 break
                 
-        if not stack:
+        if not stack: 
             next_gt[j] = -1
             
         stack.append(j)
